@@ -5,6 +5,9 @@ Backup docker service using backup gem
 
 | Variable  | Description  | Default  |
 |---|---|---|
+| `DESCRIPTION`  | Description of a backup model | `nil` |
+| `STORAGE_LOCAL_PATH`  | Path of where to store the backups | `~/backups` |
+| `STORAGE_LOCAL_KEEP`  | How much backups should be kept | `5` |
 | `DATABASE_URL`  | URL of a postgres database to be backuped. Ex.: `postgres://postgres@database:5432/postgres` | `nil` |
 | `FREQUENCY`  | How often clockwork should run the job (ex: `1.day`) | `1.day` |
 | `FREQUENCY_AT`  | At which hour clockwork should perform the backup (ex: `03:00`) | `nil` |

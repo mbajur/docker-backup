@@ -4,7 +4,7 @@ require 'open3'
 include Clockwork
 
 logger = Logger.new(STDOUT)
-cmd    = 'backup perform --trigger my_backup'
+cmd    = 'backup perform --trigger backup'
 
 timing    = ENV['FREQUENCY'].present? ? eval(ENV['FREQUENCY']) : 1.day
 timing_at = ENV['FREQUENCY_AT']

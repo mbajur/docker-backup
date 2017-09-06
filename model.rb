@@ -13,7 +13,7 @@ DATABASE_URL = URI.parse ENV['DATABASE_URL']
 # For more information about Backup's components, see the documentation at:
 # http://backup.github.io/backup
 #
-Model.new(:my_backup, 'my_backup model') do
+Model.new(:backup, ENV['DESCRIPTION']) do
   ##
   # Archive [Archive]
   #
@@ -47,8 +47,8 @@ Model.new(:my_backup, 'my_backup model') do
   # Local (Copy) [Storage]
   #
   store_with Local do |local|
-    local.path       = "~/backups/"
-    local.keep       = 5
+    local.path       = ENV['STORAGE_LOCAL_PATH'] || "~/backups/"
+    local.keep       = ENV['STORAGE_LOCAL_KEEP'] || 5
     # local.keep       = Time.now - 2592000 # Remove all backups older than 1 month.
   end
 
