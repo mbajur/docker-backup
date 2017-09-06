@@ -6,9 +6,6 @@ include Clockwork
 logger = Logger.new(STDOUT)
 cmd    = 'backup perform --trigger my_backup'
 
-logger.debug "---> Frequency: #{ENV['FREQUENCY']}"
-logger.debug "---> Database: #{ENV['DATABASE_URL']}"
-
 timing    = ENV['FREQUENCY'].present? ? eval(ENV['FREQUENCY']) : 1.day
 timing_at = ENV['FREQUENCY_AT']
 
